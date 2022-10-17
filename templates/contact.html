@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}contact{% endblock title %}
+
+{% block body %} 
+<div class="container-fluid my-1 px-0 " >
+   <img src="/static/images/new.jfif" class="d-block w-100 px-0 my-2" alt="...">
+   <h1 class="text-centre">Contact us</h1>
+   <form method="post" action="/contact">
+   {% csrf_token %}
+   <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="johnwick">
+   </div>
+
+   <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Phone number</label>
+      <input type="text" class="form-control" id="phone" name="phone" placeholder="9999999999">
+   </div>
+
+   <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Comments</label>
+      <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">submit</button>
+</div>
+   {% endblock body %}
